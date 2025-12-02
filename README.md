@@ -73,8 +73,9 @@ Set the path in receipt_parser.py:
 
 pytesseract.pytesseract.tesseract_cmd = r"C:\ProgramFiles\Tesseract-OCR\tesseract.exe"
 
+---
 
-🚦 Running the API
+### 🚦 Running the API
 cd src
 uvicorn backend.api.app:app --reload
 
@@ -86,7 +87,7 @@ http://127.0.0.1:8000/docs
 
 
 
-🧪 API Endpoints
+### 🧪 API Endpoints
 1️⃣ Receipt OCR
 POST /api/parse-receipt
 Response example:
@@ -101,7 +102,7 @@ Response example:
 }
 
 
-2️⃣ Transaction Anomaly Detection
+### 2️⃣ Transaction Anomaly Detection
 POST /api/analyze-transactions
 CSV input::
 
@@ -116,14 +117,14 @@ Response:
   "anomalies": [...]
 }
 
-🔮 Future Improvements
+### 🔮 Future Improvements
 LLM-powered financial summaries
 Full frontend dashboard
 Cloud deployment
 PDF support
 
-📜 License
+### 📜 License
 MIT License
 
-👨‍💻 Author
+### 👨‍💻 Author
 Chitayi Kagema
