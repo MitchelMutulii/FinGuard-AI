@@ -1,0 +1,68 @@
+# --- Python ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+*.sqlite
+*.db
+
+# Virtual environments
+env/
+venv/
+ENV/
+.venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Local environment variables
+.env
+.env.*
+*.secret
+*.key
+
+# Logs
+*.log
+
+# --- Backend builds ---
+dist/
+build/
+*.egg-info/
+.eggs/
+
+# --- Node / React ---
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnp
+.pnp.js
+
+# React build
+/build
+/.parcel-cache
+/.cache
+
+# --- OS-specific ---
+.DS_Store
+Thumbs.db
+
+# --- IDE / Editor ---
+.vscode/
+.idea/
+
+# --- Tests ---
+coverage/
+.tox/
+pytest_cache/
+
+# --- Data files (OPTIONAL: keep sample data) ---
+data/*.csv
+data/*.json
+data/raw/
+data/temp/
+
+# Allow sample receipts folder
+!/data/sample_receipts/
+

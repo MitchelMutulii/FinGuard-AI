@@ -1,0 +1,26 @@
+# Backend framework
+fastapi==0.115.0
+uvicorn==0.30.0
+
+# OCR
+pytesseract==0.3.13
+Pillow==10.2.0
+easyocr==1.7.1
+
+# Machine Learning
+scikit-learn==1.5.0
+numpy==1.26.4
+pandas==2.2.2
+
+# Image processing
+opencv-python==4.9.0.80
+
+# Utilities
+python-multipart==0.0.9     # for image uploads in FastAPI
+pydantic==2.7.1
+
+# Optional for PDF handling later
+pdf2image==1.17.0
+
+# Optional: CORS support for frontend
+fastapi[all]

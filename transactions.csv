@@ -1,0 +1,5 @@
+transaction_id,date,merchant,category,amount
+1,2025-12-01,Supermarket X,Groceries,1450
+2,2025-12-01,Online Store Y,Electronics,32000
+3,2025-12-02,Coffee Shop Z,Coffee,250
+4,2025-12-03,Unknown Merchant,Other,120000
