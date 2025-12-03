@@ -77,6 +77,7 @@ pytesseract.pytesseract.tesseract_cmd = r"C:\ProgramFiles\Tesseract-OCR\tesserac
 ```
 
 ### 🚦 Running the API
+```bash
 cd src
 uvicorn backend.api.app:app --reload
 
@@ -86,12 +87,13 @@ http://127.0.0.1:8000
 http://127.0.0.1:8000/docs
  (Swagger UI)
 
-
+```
 
 ### 🧪 API Endpoints
 1️⃣ Receipt OCR
 POST /api/parse-receipt
 Response example:
+```bash
 
 {
   "filename": "receipt.jpg",
@@ -101,23 +103,23 @@ Response example:
     "total_amount": 1450.00
   }
 }
-
+```
 
 ### 2️⃣ Transaction Anomaly Detection
 POST /api/analyze-transactions
 CSV input::
-
+```bash
 transaction_id,date,merchant,category,amount
 1,2025-12-01,Supermarket X,Groceries,1450
-
+```
 Response:
-
+``` bash
 {
   "filename": "transactions.csv",
   "total_transactions": 200,
   "anomalies": [...]
 }
-
+```
 ### 🔮 Future Improvements
 LLM-powered financial summaries
 Full frontend dashboard
