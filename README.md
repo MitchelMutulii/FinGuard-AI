@@ -72,9 +72,10 @@ https://github.com/UB-Mannheim/tesseract/wiki
 Set the path in receipt_parser.py:
 
 pytesseract.pytesseract.tesseract_cmd = r"C:\ProgramFiles\Tesseract-OCR\tesseract.exe"
+```
 
 ---
-```
+
 
 ### 🚦 Running the API
 ```bash
@@ -88,6 +89,7 @@ http://127.0.0.1:8000/docs
  (Swagger UI)
 
 ```
+---
 
 ### 🧪 API Endpoints
 1️⃣ Receipt OCR
@@ -104,7 +106,7 @@ Response example:
   }
 }
 ```
-
+---
 ### 2️⃣ Transaction Anomaly Detection
 POST /api/analyze-transactions
 CSV input::
@@ -120,14 +122,18 @@ Response:
   "anomalies": [...]
 }
 ```
+---
 ### 🔮 Future Improvements
 LLM-powered financial summaries
 Full frontend dashboard
 Cloud deployment
 PDF support
 
+---
+
 ### 📜 License
 MIT License
+---
 
 ### 👨‍💻 Author
-Chitayi Kagema
+Mitchel Mutuli
