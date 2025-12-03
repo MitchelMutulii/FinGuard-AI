@@ -74,6 +74,7 @@ Set the path in receipt_parser.py:
 pytesseract.pytesseract.tesseract_cmd = r"C:\ProgramFiles\Tesseract-OCR\tesseract.exe"
 
 ---
+```
 
 ### 🚦 Running the API
 cd src
