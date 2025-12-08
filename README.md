@@ -33,6 +33,7 @@ REST endpoints for OCR + anomaly scoring with auto Swagger docs.
 | Layer | Technology |
 |-------|------------|
 | Backend API | FastAPI, Uvicorn |
+| Frontend | React 19, Vite |
 | OCR | Tesseract OCR, OpenCV, Pytesseract |
 | ML | Scikit-learn, Pandas, NumPy |
 | Language | Python 3.10+ |
