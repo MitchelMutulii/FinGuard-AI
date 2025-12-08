@@ -31,7 +31,7 @@ async def analyze_transactions(
 
 
 # ========= RECEIPT OCR STUB ENDPOINT =========
-@app.post("/api/receipt/parse")
+@app.post("/api/parse-receipt")
 async def parse_receipt(file: UploadFile = File(...)):
     """
     Endpoint used by the FinGuard frontend "Receipt OCR & Parsing" section.
@@ -41,12 +41,15 @@ async def parse_receipt(file: UploadFile = File(...)):
     if not file.filename.lower().endswith((".png", ".jpg", ".jpeg", ".pdf")):
         raise HTTPException(status_code=400, detail="Unsupported file type")
 
-    # TODO: run real OCR here. For now, return a fake parsed receipt.
+    # TODO: run real OCR here. For now, return a fake parsed receipt that matches the UI schema.
     return {
-        "merchant": "Demo Supermarket",
-        "date": "2025-12-04",
-        "total": 1234.56,
-        "currency": "KES",
-        "rawText": "DUMMY RECEIPT TEXT - hook up Tesseract later",
+        "filename": file.filename,
+        "parsed_receipt": {
+            "merchant": "Demo Supermarket",
+            "date": "2025-12-04",
+            "total_amount": 1234.56,
+            "currency": "KES",
+            "raw_text": "DUMMY RECEIPT TEXT - hook up Tesseract later",
+        },
     }
 
