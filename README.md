@@ -122,6 +122,30 @@ Response:
   "anomalies": [...]
 }
 ```
+
+--- ⚙️ Installation
+
+After cloning and setting up the backend, follow these steps to run the frontend:
+
+Frontend Setup
+
+1. Navigate to the frontend directory:
+```cd src/frontend
+```
+2. Install dependencies:
+```npm install
+```
+3. Start the development server:
+```
+  npm run dev
+```
+4. Access the frontend at:
+http://localhost:5173
+
+
+
+
+
 ---
 ### 🔮 Future Improvements
 LLM-powered financial summaries
