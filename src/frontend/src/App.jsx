@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import "./App.css";
 
 const BACKEND_URL = "http://127.0.0.1:8000";
@@ -18,17 +18,27 @@ function App() {
   const [contamination, setContamination] = useState(0.05);
   const [topN, setTopN] = useState(20);
 
+  // Refs to reset file inputs
+  const receiptInputRef = useRef(null);
+  const csvInputRef = useRef(null);
+
   // Clear handlers
   const handleClearReceipt = () => {
     setReceiptFile(null);
     setReceiptResult(null);
     setReceiptError("");
+    if (receiptInputRef.current) {
+      receiptInputRef.current.value = "";
+    }
   };
 
   const handleClearCsv = () => {
     setCsvFile(null);
     setAnomalyResult(null);
     setAnomalyError("");
+    if (csvInputRef.current) {
+      csvInputRef.current.value = "";
+    }
   };
 
   const handleReceiptSubmit = async (e) => {
@@ -184,6 +194,7 @@ function App() {
               <input
                 type="file"
                 accept="image/*"
+                ref={receiptInputRef}
                 onChange={(e) => setReceiptFile(e.target.files[0] || null)}
               />
 
@@ -260,6 +271,7 @@ function App() {
               <input
                 type="file"
                 accept=".csv,text/csv"
+                ref={csvInputRef}
                 onChange={(e) => setCsvFile(e.target.files[0] || null)}
               />
 

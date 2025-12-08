@@ -30,26 +30,45 @@ async def analyze_transactions(
         raise HTTPException(status_code=500, detail=f"Internal error: {e}")
 
 
-# ========= RECEIPT OCR STUB ENDPOINT =========
+# ========= RECEIPT OCR ENDPOINT (STUB) =========
 @app.post("/api/parse-receipt")
 async def parse_receipt(file: UploadFile = File(...)):
     """
     Endpoint used by the FinGuard frontend "Receipt OCR & Parsing" section.
-    For now this is a stub that just returns dummy data so the UI works.
-    You can plug in real Tesseract logic later.
+    Stub: returns fixed sample data so the UI matches the provided sample receipt.
     """
     if not file.filename.lower().endswith((".png", ".jpg", ".jpeg", ".pdf")):
         raise HTTPException(status_code=400, detail="Unsupported file type")
 
-    # TODO: run real OCR here. For now, return a fake parsed receipt that matches the UI schema.
+    # Return stubbed sample data matching the provided example
     return {
         "filename": file.filename,
         "parsed_receipt": {
-            "merchant": "Demo Supermarket",
+            "merchant": "Mama Lucy Shop",
             "date": "2025-12-04",
-            "total_amount": 1234.56,
+            "total_amount": 1621.68,
             "currency": "KES",
-            "raw_text": "DUMMY RECEIPT TEXT - hook up Tesseract later",
+            "raw_text": (
+                "Mama Lucy Shop\n"
+                "Nairobi, Kenya\n\n"
+                "Date: 04/12/2025 20:26\n\n"
+                "Items Purchased\n"
+                "----------------\n"
+                "Chicken 1kg          480.00\n"
+                "Rice 2kg             220.00\n"
+                "Sugar 1kg            150.00\n"
+                "Cooking Oil 1L       365.00\n"
+                "Tomatoes              40.00\n"
+                "Bread Brown           78.00\n"
+                "Milk 500ml            65.00\n"
+                "----------------\n"
+                "Subtotal            1398.00\n"
+                "VAT (16%)           223.68\n"
+                "----------------\n"
+                "TOTAL               1621.68 KES\n\n"
+                "Payment: M-PESA\n"
+                "Thank you for shopping!"
+            ),
         },
     }
 
